@@ -1,28 +1,56 @@
+import welcome
+import app_menu
+
 def main():
-    print("\n\t __________________________________________________________________________________")
-    print("\t|                                                                                  |")
-    print("\t|                                  WELCOME AT Medics31                             |")
-    print("\t|                                                                                  |")
-    print("\t|           Lorem Ipsum is simply dummy text of the printing and jfsf.             |")
-    print("\t|           There are many variations of passages of Lorem Ipsum                   |")
-    print("\t|           available, but the majority have suffered  alteration in               |")
-    print("\t|                                                                                  |")
-    print("\t|                                                                                  |")
-    print("\t|            Navigation                                                            |")
-    print("\t|            ----------                                                            |")
-    print("\t|                                                                                  |")
-    print("\t|                      (1) Widely Spread Diseases                                  |")
-    print("\t|                      (2) Search By Disease Type                                  |")
-    print("\t|                      (3) Search By Gender                                        |")
-    print("\t|                      (4) Disease and prevention                                  |")
-    print("\t|                      (5) Disease and Treatment                                   |")
-    print("\t|                      (6) Talk to a Doctor                                        |")
-    print("\t|                                                                                  |")
-    print("\t|                                                                                  |")               
-    print("\t|__________________________________________________________________________________|\n\n")
+    welcome.welcome()
     
-    # while True:
-    #     print("\n\t --- Medics 31 ---\n")
+    while True:
+        app_menu.appMenu()
+
+        choice = input("\t\t Your Choice :: ")
+
+        if choice == 1:
+            print("\n\n\t\t\t--- For widely spread diseases\n\n")
+        elif choice == 2:
+            print("\n\n\t\t\t--- For widely spread diseases\n\n")
+        elif choice == 3:
+            print("\n\n\t\t\t--- For widely spread diseases\n\n")
+        elif choice == 4:
+            print("\n\n\t\t\t--- For widely spread diseases\n\n")
+        elif choice == 5:
+            print("\n\n\t\t\t--- For widely spread diseases\n\n")
+        elif choice == 6:
+            print("\n\n\t\t\t--- For widely spread diseases\n\n")
+        elif choice == 7:
+            print("\n\n\t\t\t--- Exiting...\n\n")
+            break
+        else:
+            print("\n\n\t\t\t--- For widely spread diseases\n\n")
+
+        
+            # case _:
+            #     raise ValueError("No such choice")
+
+        # match choice:
+        #     case 1:
+        #         print("--- For widely spread diseases\n")
+        #         break
+        #     case 2:
+        #         print("--- For searching by diseases\n")
+        #     case 3:
+        #         print("--- For searching by gender\n")
+        #     case 4:
+        #         print("--- For widely spread diseases\n")
+        #     case 5:
+        #         print("--- For widely spread diseases\n")
+        #     case 6:
+        #         print("--- For widely spread diseases\n")
+        #     case 7:
+        #         print("--- Exit\n")
+        #         break
+        #     case _:
+        #         raise ValueError("No such choice")
+        
 
 if __name__ == "__main__":
     main()
