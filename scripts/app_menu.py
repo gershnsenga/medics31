@@ -7,7 +7,6 @@ def appMenu():
     print("\t|                      (4) Disease and prevention                                  |")
     print("\t|                      (5) Disease and Treatment                                   |")
     print("\t|                      (6) Talk to a Doctor                                        |")
-    print("\t|                      (6) Talk to a Doctor                                        |")
     print("\t|                      (7) Exit                                                    |")
     print("\t|                                                                                  |") 
     print("\t|                                                                                  |") 
