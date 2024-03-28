@@ -1,18 +1,20 @@
-import welcome
-import app_menu
+from src.search_disease import *
+from scripts.welcome import *
+from scripts.app_menu import appMenu
 
 def main():
-    welcome.welcome()
+    welcome()
     
     while True:
-        app_menu.appMenu()
+        appMenu()
 
-        choice = int(input("\t\t Your Choice :: "))
+        choice = int(input("\t\t\t --- Your Choice :: "))
 
         if choice == 1:
             print("\n\n\t\t\t--- For widely spread diseases\n\n")
         elif choice == 2:
-            print("\n\n\t\t\t--- for search by disease\n\n")
+            disease = input("\n\t\t\t\t\t Type a disease : ")
+            search_by_disease(disease)
         elif choice == 3:
             print("\n\n\t\t\t--- For search by gender\n\n")
         elif choice == 4:
