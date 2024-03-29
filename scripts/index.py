@@ -1,5 +1,6 @@
 import welcome
 import app_menu
+import talk_to_doc 
 
 def main():
     welcome.welcome()
@@ -7,7 +8,7 @@ def main():
     while True:
         app_menu.appMenu()
 
-        choice = input("\t\t Your Choice :: ")
+        choice = int(input("\t\t Your Choice :: "))
 
         if choice == 1:
             print("\n\n\t\t\t--- For widely spread diseases\n\n")
@@ -20,12 +21,15 @@ def main():
         elif choice == 5:
             print("\n\n\t\t\t--- For widely spread diseases\n\n")
         elif choice == 6:
-            print("\n\n\t\t\t--- For widely spread diseases\n\n")
+            print("\n\n\t\t\t--- Talk to a doctor.\n\n")
+            talk_to_doc.talkToDoc()
         elif choice == 7:
             print("\n\n\t\t\t--- Exiting...\n\n")
+            exit()
             break
         else:
-            print("\n\n\t\t\t--- For widely spread diseases\n\n")
+            # print("\n\n\t\t\t--- For widely spread diseases\n\n")
+            main()
 
         
             # case _:
