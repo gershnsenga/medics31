@@ -1,4 +1,4 @@
-import app_menu
+from .import app_menu
 def welcome():
     print("\n\t __________________________________________________________________________________")
     print("\t|                                                                                  |")
