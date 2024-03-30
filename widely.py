@@ -1,4 +1,5 @@
 #This file prints widely spread diseases
+# If response.status_code == 200
 
 import requests
 
