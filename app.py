@@ -2,6 +2,7 @@ from src.search_disease import *
 from src.search_gender import *
 from scripts.welcome import *
 from scripts.app_menu import appMenu
+from scripts.talk_to_doc import Ta
 
 def main():
     welcome()
