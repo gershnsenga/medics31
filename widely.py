@@ -1,3 +1,5 @@
+#This file prints widely spread diseases
+
 import requests
 
 def get_widely_spread_diseases():
