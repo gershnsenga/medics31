@@ -1,4 +1,4 @@
-# Medics
+# Medics31. A Negpod31 PLD Assessment
 
 ## Project setup
   * Download and install mysql database server to your local machine
