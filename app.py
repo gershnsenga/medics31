@@ -2,7 +2,7 @@ from src.search_disease import *
 from src.search_gender import *
 from scripts.welcome import *
 from scripts.app_menu import appMenu
-from scripts.talk_to_doc import Ta
+from scripts.talk_to_doc import talkToDoc
 
 def main():
     welcome()
@@ -26,6 +26,7 @@ def main():
             print("\n\n\t\t\t--- For disease and treatment\n\n")
         elif choice == 6:
             print("\n\n\t\t\t--- For talking to a doctor\n\n")
+            talkToDoc()
         elif choice == 7:
             print("\n\n\t\t\t--- Exiting...\n\n")
             break
