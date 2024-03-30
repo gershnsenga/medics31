@@ -9,8 +9,8 @@ def connect_to_database():
         connection = mysql.connector.connect(
             host="localhost",
             port=3306,
-            user="lapaix",
-            password="lapaix",
+            user="root",
+            password="gdnytnum20",
             database="metrics31"
         )
     
@@ -21,3 +21,5 @@ def close_db_connection():
     if connection:
         connection.close
         connection = None
+
+print ("Connected to database successfully")

@@ -1,4 +1,5 @@
 from src.search_disease import *
+from src.search_gender import *
 from scripts.welcome import *
 from scripts.app_menu import appMenu
 from scripts.talk_to_doc import Ta
@@ -18,6 +19,7 @@ def main():
             search_by_disease(disease)
         elif choice == 3:
             print("\n\n\t\t\t--- For search by gender\n\n")
+            search_by_gender_menu()
         elif choice == 4:
             print("\n\n\t\t\t--- For disease and prevention\n\n")
         elif choice == 5:
