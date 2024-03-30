@@ -1,3 +1,5 @@
+from app_menu import *
+
 def talkToDoc():
 
     print("\t|                      1) Dr. Nmesoma: General medicine                                |")
@@ -19,7 +21,7 @@ def talkToDoc():
             if choice == 1:
                 talkToDoc()
             elif choice == 2:
-                index.main()
+                appMenu()
         elif option == 2:
             print("\n\n\t\t\t--- DR.2 BIO\n\n")
             print("press 1 to go back to previous menu?")
@@ -28,7 +30,7 @@ def talkToDoc():
             if choice == 1:
                 talkToDoc()
             elif choice == 2:
-                index.main()
+                appMenu()
         elif option == 3:
             print("\n\n\t\t\t--- DR.3 BIO\n\n")
             print("press 1 to go back to previous menu?")
@@ -37,7 +39,7 @@ def talkToDoc():
             if choice == 1:
                 talkToDoc()
             elif choice == 2:
-                index.main()
+                appMenu()
         elif option == 4:
             print("\n\n\t\t\t--- DR.4 BIO\n\n")
             print("press 1 to go back to previous menu?")
@@ -46,7 +48,7 @@ def talkToDoc():
             if choice == 1:
                 talkToDoc()
             elif choice == 2:
-                index.main()
+                appMenu()
         elif option == 5:
             print("\n\n\t\t\t--- DR.5 BIO\n\n")
             print("press 1 to go back to previous menu?")
@@ -55,7 +57,7 @@ def talkToDoc():
             if choice == 1:
                 talkToDoc()
             elif choice == 2:
-                index.main()
+                appMenu()
         elif option == 6:
             print("\n\n\t\t\t--- DR.6 BIO\n\n")
             print("press 1 to go back to previous menu?")
@@ -64,11 +66,11 @@ def talkToDoc():
             if choice == 1:
                 talkToDoc()
             elif choice == 2:
-                index.main()
+                appMenu()
         elif option == 7:
             # print("\n\n\t\t\t--- Exiting...\n\n")
             # exit()
-            index.main()
+            appMenu()
         else:
                 # print("\n\n\t\t\t--- For widely spread diseases\n\n")
             talkToDoc()
