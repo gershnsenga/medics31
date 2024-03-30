@@ -1,6 +1,8 @@
 from src.search_disease import *
+from src.search_gender import *
 from scripts.welcome import *
-from scripts.app_menu import appMenu
+from scripts.app_menu import *
+from scripts.talk_to_doc import talkToDoc
 
 def main():
     welcome()
@@ -18,12 +20,14 @@ def main():
                 search_by_disease(disease)
             case 3:
                 print("\n\n\t\t\t--- For search by gender\n\n")
+                search_by_gender_menu()
             case 4:
                 print("\n\n\t\t\t--- For disease and prevention\n\n")
             case 5:
                 print("\n\n\t\t\t--- For disease and treatment\n\n")
             case 6:
                 print("\n\n\t\t\t--- For talking to a doctor\n\n")
+                talkToDoc()
             case 7:
                 print("\n\n\t\t\t--- Exiting...\n\n")
                 break
