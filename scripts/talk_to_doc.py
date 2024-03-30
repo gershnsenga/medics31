@@ -1,4 +1,4 @@
-from app_menu import *
+from .app_menu import *
 
 def talkToDoc():
 
