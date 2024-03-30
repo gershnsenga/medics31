@@ -20,7 +20,7 @@ def main():
     if choice in ["1", "2", "3", "4"]:
         disease_names = ["Malaria", "Typhoid", "Influenza", "COVID-19"]
         chosen_disease = disease_names[int(choice) - 1]
-        print(f"You chose {chosen_disease}.")
+        print("You chose {}.".format(chosen_disease))
         print("Prevention details:")
         print(disease_and_prevention(chosen_disease))
     else:
