@@ -6,7 +6,9 @@ CREATE TABLE disease(
     disease_name VARCHAR(255) 
     );
 
+ALTER TABLE disease ADD COLUMN description TEXT AFTER disease_name;
 
+UPDATE disease SET description='One of the widely spread disease in this country and Africa.' WHERE id='d407f92f-ecfa-11ee-9842-0242ac110002';
 --- Type table
 
 CREATE TABLE type (
@@ -25,7 +27,9 @@ CREATE TABLE disease_type (
     FOREIGN KEY (type_id) REFERENCES type(id)
 );
 
-
+SELECT disease.disease_name
+FROM disease
+JOIN disease_type ON disease.id = disease_type.disease_id;
 --- Disease information table
 
 CREATE TABLE disease_info (
