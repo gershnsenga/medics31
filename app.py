@@ -5,6 +5,7 @@ from src.disease_and_treatment import *
 from scripts.welcome import *
 from scripts.app_menu import *
 from scripts.talk_to_doc import DoctorMenu
+from src.disease_and_treatment import disease_and_treatment
 
 
 def main():
@@ -17,7 +18,7 @@ def main():
 
         match choice:
             case 1:
-                print("\n\n\t\t\t--- For widely spread diseases\n\n")
+                getDisease()
             case 2:
                 print("\n\t\t\t\t\t\t|     1. Get All types of diseases")
                 print("\t\t\t\t\t\t|     2. Get diseases in a type           ")
