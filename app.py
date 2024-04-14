@@ -40,10 +40,11 @@
 from src.search_disease import *
 from src.search_gender import *
 from src.disease_and_prevention import *
+from src.disease_and_treament import *
 from scripts.welcome import *
 from scripts.app_menu import *
 from scripts.talk_to_doc import DoctorMenu
-from src.disease_and_treament import *
+
 
 def main():
     welcome()
@@ -68,7 +69,8 @@ def main():
                 disease_and_prevention(disease)
             case 5:
                 print("\n\n\t\t\t--- For disease and treatment\n\n")
-                
+                disease = input("\n\t\t\t\t\t Type a disease : ")
+                disease_and_treament(disease)
             case 6:
                 print("\n\n\t\t\t--- For talking to a doctor\n\n")
                 DoctorMenu().talk_to_doctor()  # Call the talk_to_doctor method of DoctorMenu

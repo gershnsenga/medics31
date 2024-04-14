@@ -1,6 +1,6 @@
 from .db_connection import *
 
-def search_by_disease(disease):    
+def disease_and_treatment(disease):
     connection = connect_to_database()
     cursor = connection.cursor()
 
@@ -10,34 +10,29 @@ def search_by_disease(disease):
     disease_found = cursor.fetchall()
     if disease_found:
         while True:
-            print("\n\t\t\t\t\t\t|     1. Treatment")
-            print("\t\t\t\t\t\t|     2. Back to main menu")
-
             try:
-                choice = int(input("\n\t\t\t\t\t\t\t --- Which service now :: "))
-                if choice == 1:
-                    treatment_sql = "SELECT i.treatment FROM disease d INNER JOIN disease_info i on d.id=i.disease_id WHERE d.disease_name = %s"
-                    cursor.execute(treatment_sql, (disease,))
-                    treatments = cursor.fetchall()
+                results_sql = "SELECT d.disease_name, i.treatment FROM disease d INNER JOIN disease_info i on d.id=i.disease_id WHERE d.disease_name = %s"
+                cursor.execute(results_sql, (disease,))
+                rows = cursor.fetchall()
 
-                    if treatments:
-                        print(f"\n\n\t\t\t\t\t\t\t\t {disease.capitalize()} Treatment \n\t\t\t\t\t\t\t\t -----------")
-                        for treatment in treatments:
-                            print(f"\n\t\t\t\t\t\t\t\t | - {treatment[0]}")
-                        print("\n")
-                    else:
-                        print("\n\t\t\t\t\t\t\t------------------------------\n\t\t\t\t\t\t\t| No treatment information available.  | \n\t\t\t\t\t\t\t------------------------------\n")
-                
-                elif choice == 2:
-                    break
-                
+                if rows:
+                    print(f"\n\n\t\t\t\t\t\t\t\t {disease.capitalize()} Treatment \n\t\t\t\t\t\t\t\t -----------")
+                    for row in rows:
+                        print(f"\n\t\t\t\t\t\t\t\t | - {row[1]}")
+                    print("\n")
                 else:
-                    print("\n\t\t\t\t\t\t\t------------------------------\n\t\t\t\t\t\t\t| Your choice is not valid.  | \n\t\t\t\t\t\t\t------------------------------\n")
-            
-            except ValueError:
-                print("\n\t\t\t\t\t\t\t------------------------------\n\t\t\t\t\t\t\t| Please enter a valid number.  | \n\t\t\t\t\t\t\t------------------------------\n")
-            
+                    print("\n\t\t\t\t\t\t\t------------------------------\n\t\t\t\t\t\t\t| No treatment information available.  | \n\t\t\t\t\t\t\t------------------------------\n")
+
+                choice = input("\n\t\t\t\t\t\t\t --- Press 'm' to return to the main menu: ")
+                if choice.lower() == 'm':
+                    break
+                else:
+                    print("\n\t\t\t\t\t\t\t------------------------------\n\t\t\t\t\t\t\t| Invalid input.  | \n\t\t\t\t\t\t\t------------------------------\n")
+
+            except Exception as e:
+                print("\n\t\t\t\t\t\t\t------------------------------\n\t\t\t\t\t\t\t| An error occurred: ", e, " | \n\t\t\t\t\t\t\t------------------------------\n")
+                
     else:
-        print("\n\t No Such disease\n\t ------------\n")
+        print("\n\t No such disease found.\n\t ------------\n")
 
     cursor.close()
