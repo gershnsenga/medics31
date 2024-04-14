@@ -112,7 +112,7 @@ class DoctorMenu:
             print(f"\n\n\t\t\t--- {doctor.name} \n\n")
             print("\n\n\t\t\t\t  -- Desc : Meet Doctor Gershom, a specialist in Dental therapy. For more information, use the contacts \n\t\t\t\t\tbelow to get in touch with him.\n")
             print("\n\t\t\t\t\t  -- Tel : +250 783 563 849 ")
-            print("\n\t\t\t\t\t  -- Hospital :  King Faisal \t")
+            print("\n\t\t\t\t\t  -- Hospital :  King Faisal \ns")
             choice = int(input("press 1 to go back to previous menu or 2 to go back to main menu: "))
             if choice == 1:
                 self.talk_to_doctor()
