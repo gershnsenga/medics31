@@ -1,47 +1,7 @@
-# from src.search_disease import *
-# from src.search_gender import *
-# from scripts.welcome import *
-# from scripts.app_menu import *
-# from scripts.talk_to_doc import talkToDoc
-
-# def main():
-#     welcome()
-    
-#     while True:
-#         appMenu()
-
-#         choice = int(input("\t\t\t --- Your Choice :: "))
-
-#         match choice:
-#             case 1:
-#                 print("\n\n\t\t\t--- For widely spread diseases\n\n")
-#             case 2:
-#                 disease = input("\n\t\t\t\t\t Type a disease : ")
-#                 search_by_disease(disease)
-#             case 3:
-#                 print("\n\n\t\t\t--- For search by gender\n\n")
-#                 search_by_gender_menu()
-#             case 4:
-#                 print("\n\n\t\t\t--- For disease and prevention\n\n")
-#             case 5:
-#                 print("\n\n\t\t\t--- For disease and treatment\n\n")
-#             case 6:
-#                 print("\n\n\t\t\t--- For talking to a doctor\n\n")
-#                 talkToDoc()
-#             case 7:
-#                 print("\n\n\t\t\t--- Exiting...\n\n")
-#                 break
-#             case _:
-#                 print("\n\n\t\t\t--- No such choice\n\n")
-
-# if __name__ == "__main__":
-#     main()
-
-from src.search_disease import *
 from src.search_type import *
 from src.search_gender import *
 from src.disease_and_prevention import *
-from src.disease_and_treament import *
+from src.disease_and_treatment import *
 from scripts.welcome import *
 from scripts.app_menu import *
 from scripts.talk_to_doc import DoctorMenu
@@ -78,16 +38,16 @@ def main():
                             print("\n\t\t\t\t\t\t\t------------------------------\n\t\t\t\t\t\t\t| Your choice is not valid.  | \n\t\t\t\t\t\t\t------------------------------\n")
                         
             case 3:
-                print("\n\n\t\t\t--- For search by gender\n\n")
-                search_by_gender_menu()
+                gender_search = DiseaseGenderSearch()
+                gender_search.search_by_gender_menu()
             case 4:
-                print("\n\n\t\t\t--- For disease and prevention\n\n")
-                disease = input("\n\t\t\t\t\t Type a disease : ")
-                disease_and_prevention(disease)
+                disease_name = input("\n\t\t\t\t\t Type a disease : ")
+                disease_prevention = DiseasePrevention(disease_name)
+                disease_prevention.get_preventions()
             case 5:
-                print("\n\n\t\t\t--- For disease and treatment\n\n")
-                disease = input("\n\t\t\t\t\t Type a disease : ")
-                disease_and_treament(disease)
+                disease_name = input("\n\t\t\t\t\t Type a disease : ")
+                disease_treatment = DiseaseTreatment(disease_name)
+                disease_treatment.get_treatment()
             case 6:
                 print("\n\n\t\t\t--- For talking to a doctor\n\n")
                 DoctorMenu().talk_to_doctor()  # Call the talk_to_doctor method of DoctorMenu
