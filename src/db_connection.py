@@ -10,7 +10,7 @@ def connect_to_database():
             host="localhost",
             port=3306,
             user="root",
-            password="gdnytnum20",
+            password="Laurelle1234",
             database="metrics31"
         )
     

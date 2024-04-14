@@ -1,6 +1,7 @@
 from src.search_disease import *
 from src.search_gender import *
 from src.disease_and_prevention import *
+from src.widelyspreaddiseases import *
 from scripts.welcome import *
 from scripts.app_menu import *
 from scripts.talk_to_doc import talkToDoc
@@ -15,7 +16,7 @@ def main():
 
         match choice:
             case 1:
-                print("\n\n\t\t\t--- For widely spread diseases\n\n")
+                getDisease()
             case 2:
                 disease = input("\n\t\t\t\t\t Type a disease : ")
                 search_by_disease(disease)
