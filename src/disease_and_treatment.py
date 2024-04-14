@@ -16,14 +16,14 @@ def disease_and_treatment(disease):
                 rows = cursor.fetchall()
 
                 if rows:
-                    print(f"\n\n\t\t\t\t\t\t\t\t {disease.capitalize()} Treatment \n\t\t\t\t\t\t\t\t -----------")
+                    print(f"\n\n\t\t\t\t {disease.capitalize()} Disease Treatment \n\t\t\t\t\t-------------")
                     for row in rows:
-                        print(f"\n\t\t\t\t\t\t\t\t | - {row[1]}")
+                        print(f"\n\t | - {row[1]}")
                     print("\n")
                 else:
                     print("\n\t\t\t\t\t\t\t------------------------------\n\t\t\t\t\t\t\t| No treatment information available.  | \n\t\t\t\t\t\t\t------------------------------\n")
 
-                choice = input("\n\t\t\t\t\t\t\t --- Press 'm' to return to the main menu: ")
+                choice = input("\n\t\t\t --- Press 'm' to return to the main menu: ")
                 if choice.lower() == 'm':
                     break
                 else:

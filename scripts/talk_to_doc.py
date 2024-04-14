@@ -96,13 +96,13 @@ class DoctorMenu:
         ]
 
     def display_menu(self):
-        print("\t|                      1) Dr. Nmesoma: General medicine                                |")
-        print("\t|                      2) Dr. Gershom : Internal medicine                                  |")
-        print("\t|                      3) Dr. L.J: General medicine                                  |")
-        print("\t|                      4) Dr. Tracy: Internal medicine                                  |")
+        print("\t|                      1) Dr. Nmesoma: General medicine                                      |")
+        print("\t|                      2) Dr. Gershom : Internal medicine                                    |")
+        print("\t|                      3) Dr. L.J: General medicine                                          |")
+        print("\t|                      4) Dr. Tracy: Internal medicine                                       |")
         print("\t|                      5) Dr. David Peter: General medicine                                  |")
-        print("\t|                      6) Dr. Jade: Internal medicine                                  |")
-        print("\t|                      7) back to main menu                                  |")
+        print("\t|                      6) Dr. Jade: Internal medicine                                        |")
+        print("\t|                      7) back to main menu                                                  |")
 
     def talk_to_doctor(self):
         self.display_menu()
