@@ -11,6 +11,9 @@ ALTER TABLE disease ADD COLUMN description TEXT AFTER disease_name;
 UPDATE disease SET description='One of the widely spread disease in this country and Africa.' WHERE id='d407f92f-ecfa-11ee-9842-0242ac110002';
 --- Type table
 
+ALTER TABLE disease ADD COLUMN is_widely BOOLEAN AFTER description;
+UPDATE disease SET is_widely='true'
+
 CREATE TABLE type (
     id CHAR(36)  PRIMARY KEY,
     type_name VARCHAR(255)

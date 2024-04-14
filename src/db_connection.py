@@ -21,5 +21,3 @@ def close_db_connection():
     if connection:
         connection.close
         connection = None
-
-print ("Connected to database successfully")
