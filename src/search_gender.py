@@ -27,13 +27,11 @@ def search_by_gender(gender):
     diseases = cursor.fetchall()
 
     if diseases:
+        print(f"\n\t\t LIST OF DISEASES MOSTLY AFFECTED BY THIS GENDER")
         for index, disease in enumerate(diseases, start=1):
-            print(f"\nOption {index}: {disease[0]}")
-            print(f"\tDescription: {disease[1]}")
-            print("\tOption 1: Preventive measures")
-            print("\tOption 2: Treatment")
-            print("\tOption 3: Back to the previous menu")
-            print("\tOption 4: Back to main menu")
+            print(f"\nDisease {index}: {disease[0]}")
+            print(f"\tPreventive measures: {disease[1]}")
+            # print("\tOption 4: Back to main menu")
     else:
         print(f"\nNo diseases found for {gender}.")
 
