@@ -10,13 +10,13 @@ def disease_and_prevention(disease):
     rows = cursor.fetchall()
 
     if len(rows) > 0:
-        print("\n\n\t\t\t\t\t\t\t\t {} Preventive Measures\n\t\t\t\t\t\t\t\t -----------".format(disease))
+        print("\n\n\t\t\t\t {} Preventive Measures\n\t\t\t\t\t-------------".format(disease))
         for row in rows:
             disease_name, prevention = row
-            print(f"\n\t\t\t\t\t\t\t\t | - {prevention}")
+            print(f"\n\t\t | - {prevention}")
         
         print("\n")
-        back_to_menu = input("\n\t\t\t\t\t\t\t Press 'b' to go back to the main menu: ")
+        back_to_menu = input("\n\t\t\t Press 'b' to go back to the main menu: ")
         if back_to_menu.lower() == 'b':
             return
     else:
