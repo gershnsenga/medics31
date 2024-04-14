@@ -7,3 +7,20 @@ def getDisease():
     print("5: Common Cold")
     print("6: Exit")
     
+     choice = input("Enter your choice: ")
+    if choice == '1':
+        disease_menu("COVID")
+    elif choice == '2':
+        disease_menu("Malaria")
+    elif choice == '3':
+        disease_menu("Diabetes")
+    elif choice == '4':
+        disease_menu("Influenza")
+    elif choice == '5':
+        disease_menu("Common Cold")
+    elif choice == '6':
+        exit()
+    else:
+        print("Invalid choice. Please try again.")
+        main_menu()
+
