@@ -27,7 +27,7 @@ class SearchByType:
 
         typeInput = str(input("\n\t\t\t\tWhat type : "))
 
-        sql = 'SELECT * FROM type WHERE type_name= %s'
+        sql = "SELECT * FROM type WHERE type_name= %s"
         cursor.execute(sql, (typeInput,))
 
         id, type_name = cursor.fetchone()

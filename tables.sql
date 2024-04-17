@@ -60,3 +60,20 @@ CREATE TABLE disease_gender (
     FOREIGN KEY (disease_id) REFERENCES disease(id),
     FOREIGN KEY (gender_id) REFERENCES gender(id)
 );
+
+
+CREATE TABLE doctor(
+    id CHAR(36) PRIMARY KEY, 
+    name VARCHAR(55) NOT NULL,
+    bio VARCHAR(1000),
+    specialization VARCHAR(55) NOT NULL,
+    phone VARCHAR(55) NOT NULL,
+    email VARCHAR(55) NOT NULL,
+    hospital VARCHAR(55) NOT NULL
+    );
+
+INSERT INTO doctor (id, name, bio,specialization, phone, email, hospital) VALUES
+('550e8400-e29b-41d4-a716-446655440000', 'Dr. Peter Nmesoma', 'Desc : Meet Dr. Peter, a specialist in cardiology. For more information, use the contacts below to get in touch with him.', 'Cardiologist', '+250788123456', 'peter.doe@example.com', 'City Hospital'),
+('550e8400-e29b-41d4-a716-446655440001', 'Dr. Tracy Murenzi', 'BIO', 'Pediatrician', '+250788234567', 'tracy.smith@example.com', 'Central Clinic'),
+('550e8400-e29b-41d4-a716-446655440002', 'Dr. Jade Tuzinde','BIO' ,'Dermatologist', '+250788345678', 'jade.johnson@example.com', 'General Hospital'),
+('550e8400-e29b-41d4-a716-446655440003', 'Dr. Jinelle', 'BIO' ,'Oncologist', '+250788456789', 'jinelle.williams@example.com', 'Regional Hospital');

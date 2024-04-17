@@ -52,7 +52,6 @@ def main():
                 disease_treatment = DiseaseTreatment(disease_name)
                 disease_treatment.get_treatment()
             case 6:
-                print("\n\n\t\t\t--- For talking to a doctor\n\n")
                 DoctorMenu().talk_to_doctor()  # Call the talk_to_doctor method of DoctorMenu
             case 7:
                 print("\n\n\t\t\t--- Exiting...\n\n")
