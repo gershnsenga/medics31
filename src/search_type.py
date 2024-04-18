@@ -16,7 +16,6 @@ class SearchByType:
         print("\n\n\t\t\t\t\t All Types \n\t\t\t\t\t -----------")
         rows = cursor.fetchall()
         for row in rows:
-            # id, type_name = row
             print(f"\n\t\t\t\t\t | - {row[1]}")
             cursor.close()
 
@@ -27,15 +26,18 @@ class SearchByType:
 
         typeInput = str(input("\n\t\t\t\tWhat type : "))
 
-        sql = "SELECT * FROM type WHERE type_name= %s"
-        cursor.execute(sql, (typeInput,))
+        sql = "SELECT * FROM type WHERE type_name LIKE %s"
+        cursor.execute(sql, ('%' + typeInput + '%',))
 
-        id, type_name = cursor.fetchone()
+        result = cursor.fetchone()
 
-        main_sql = "SELECT disease.disease_name FROM disease JOIN disease_type ON disease.id = disease_type.disease_id where disease_type.type_id=%s"
-        cursor.execute(main_sql, (id,))
+        if result is None:
+            print("\n\n\t\t\t\t\t\t------------------------ \n\t\t\t\t\t\t| No such type found    |\n\t\t\t\t\t\t------------------------\n\n")
+        else:
+            main_sql = "SELECT disease.disease_name FROM disease JOIN disease_type ON disease.id = disease_type.disease_id WHERE disease_type.type_id=%s"
+            cursor.execute(main_sql, (result[0],))
 
-        print("\n\n\t\t\t\t\t {} diseases \n\t\t\t\t\t -----------".format(type_name))
-        for row in cursor.fetchall():
-            print("\n\t\t\t\t\t\t|- {}".format(row[0]))
-        cursor.close()
+            print(f"\n\n\t\t\t\t\t {result[1]} diseases \n\t\t\t\t\t -----------")
+            for row in cursor.fetchall():
+                print("\n\t\t\t\t\t\t|- {}".format(row[0]))
+            cursor.close()

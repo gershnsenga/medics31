@@ -34,7 +34,7 @@ class DiseaseGenderSearch:
             print(f"\n\t\t\t\t\t\t\t LIST OF DISEASES MOSTLY AFFECTED BY THIS GENDER")
             for index, disease in enumerate(diseases, start=1):
                 print(f"\n\t\t\t\t\t\t\tDisease {index}: {disease[0]}")
-                print(f"\t\t\t\t\t\t\t\tPreventive measures: {disease[1]}")
+                # print(f"\t\t\t\t\t\t\t\tPreventive measures: {disease[1]}")
         else:
             print(f"\n\t\t\t\t\t\tNo diseases found for {gender}.")
 

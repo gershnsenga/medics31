@@ -1,42 +1,31 @@
 from .db_connection import *
 
 class DiseaseTreatment:
-    def __init__(self, disease):
-        self.disease = disease
+    def __init__(self):
+        pass
 
     def get_treatment(self):
         connection = connect_to_database()
         cursor = connection.cursor()
 
-        sql = "SELECT * FROM disease WHERE disease_name = %s"
-        cursor.execute(sql, (self.disease,))
-        disease_found = cursor.fetchall()
+        while True:
+            disease_name = input("\n\t\t\t\t\t\t Type a disease : ")
 
-        if disease_found:
-            while True:
-                try:
-                    results_sql = "SELECT d.disease_name, i.treatment FROM disease d INNER JOIN disease_info i on d.id=i.disease_id WHERE d.disease_name = %s"
-                    cursor.execute(results_sql, (self.disease,))
-                    rows = cursor.fetchall()
+            sql = "SELECT d.disease_name, i.treatment FROM disease d INNER JOIN disease_info i on d.id=i.disease_id WHERE d.disease_name LIKE %s"
+            cursor.execute(sql, ('%' + disease_name + '%',))
 
-                    if rows:
-                        print(f"\n\n\t\t\t\t\t\t\t\t {self.disease.capitalize()} Treatment \n\t\t\t\t\t\t\t\t -----------")
-                        for row in rows:
-                            print(f"\n\t\t\t\t\t\t\t\t | - {row[1]}")
-                        print("\n")
-                    else:
-                        print("\n\t\t\t\t\t\t\t------------------------------\n\t\t\t\t\t\t\t| No treatment information available.  | \n\t\t\t\t\t\t\t------------------------------\n")
+            res = cursor.fetchall()
+            if len(res) <= 0:
+                print("\n\t\t\t\t\t No treatment measures found.\n")
+            else:
+                print(f"\n\n\t\t\t\t\t {res[0][0]} Treatment Measures\n\t\t\t\t\t------------------------------")
+                for row in res:
+                    print(f"\n\t\t\t\t\t | - {row[1]}")
 
-                    choice = input("\n\t\t\t\t\t\t\t --- Press 'm' to return to the main menu: ")
-                    if choice.lower() == 'm':
-                        break
-                    else:
-                        print("\n\t\t\t\t\t\t\t------------------------------\n\t\t\t\t\t\t\t| Invalid input.  | \n\t\t\t\t\t\t\t------------------------------\n")
-
-                except Exception as e:
-                    print("\n\t\t\t\t\t\t\t------------------------------\n\t\t\t\t\t\t\t| An error occurred: ", e, " | \n\t\t\t\t\t\t\t------------------------------\n")
-                    
-        else:
-            print("\n\t No such disease found.\n\t ------------\n")
-
-        cursor.close()
+                print("\n")
+                back_to_menu = input("\n\t\t\t\t Do you want to continue(y/n): ")
+                if back_to_menu.lower() == 'y':
+                    continue
+                else:
+                    cursor.close()
+                    break
